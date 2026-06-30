@@ -232,6 +232,7 @@ input, select, textarea, button { font-family: inherit; }
 .hero__stats { display: flex; align-items: center; flex-wrap: wrap; gap: 0; }
 .stat { display: flex; flex-direction: column; padding: 0 32px; }
 .stat:first-child { padding-left: 0; }
+.stat__row { display: flex; align-items: baseline; gap: 2px; }
 .stat__number { font-family: var(--font-serif); font-size: 36px; font-weight: 600; color: var(--gold); line-height: 1; }
 .stat__label { font-size: 11px; color: rgba(255,255,255,.5); letter-spacing: 0.04em; margin-top: 4px; }
 .stat__sep { width: 1px; height: 48px; background: rgba(255,255,255,.1); }
