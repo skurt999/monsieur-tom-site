@@ -467,6 +467,8 @@ input, select, textarea, button { font-family: inherit; }
   .hero__stats { flex-direction: column; gap: 16px; align-items: flex-start; }
   .stat { padding: 0; }
   .stat__sep { display: none; }
+  .hero__scroll { display: none; }
+  .hero { min-height: auto; padding-bottom: 56px; }
   .contact__form-wrap { padding: 24px 16px; }
   .form__row { grid-template-columns: 1fr; }
   .footer__inner { grid-template-columns: 1fr; }
