@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://monsieur-tom.fr/</loc>
     <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://monsieur-tom.fr/machines.jpg</image:loc>
-      <image:title>Distributeurs automatiques boissons et snacks Monsieur Tom</image:title>
-      <image:caption>Distributeur boissons et machine à café installés par Monsieur Tom en Île-de-France</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://monsieur-tom.fr/logo.png</image:loc>
-      <image:title>Logo Monsieur Tom — Distribution &amp; Services</image:title>
-    </image:image>
   </url>
 </urlset>
