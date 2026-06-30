@@ -75,7 +75,7 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.service-card, .point, .temoignage-card, .faq__item, .step-card').forEach(el => {
+document.querySelectorAll('.service-card, .point, .temoignage-card, .faq__item, .step-card, .visual-card, .contact__form-wrap').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(20px)';
   el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
