@@ -203,6 +203,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .nav__links a:not(.btn):hover::after { width: 100%; }
 .nav__burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
 .nav__burger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all var(--transition); }
+.nav__burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__burger.open span:nth-child(2) { opacity: 0; }
+.nav__burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 .nav__mobile { display: none; flex-direction: column; padding: 16px 24px 20px; border-top: 1px solid rgba(255,255,255,.08); }
 .nav__mobile.open { display: flex; }
 .nav__mobile-link { color: rgba(255,255,255,.85); font-size: 15px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.06); transition: color var(--transition); }
@@ -380,7 +383,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .author-role { font-size: 12px; color: var(--gray-400); }
 
 /* ===== FAQ ===== */
-.faq { background: var(--white); }
+.faq { background: var(--white); position: relative; overflow: hidden; }
+.faq::before {
+  content: '';
+  position: absolute; top: -120px; left: -120px;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,169,110,.12);
+  pointer-events: none;
+}
 .faq__list { display: flex; flex-direction: column; }
 .faq__item { border-bottom: 1px solid var(--gray-200); transition: background var(--transition); }
 .faq__item:first-child { border-top: 1px solid var(--gray-200); }

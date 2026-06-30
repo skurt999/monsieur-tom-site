@@ -15,8 +15,14 @@ window.addEventListener('scroll', () => {
 // ===== BURGER MENU =====
 const burger = document.getElementById('burger');
 const navMobile = document.getElementById('navMobile');
-burger.addEventListener('click', () => navMobile.classList.toggle('open'));
-navMobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navMobile.classList.remove('open')));
+burger.addEventListener('click', () => {
+  navMobile.classList.toggle('open');
+  burger.classList.toggle('open');
+});
+navMobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  navMobile.classList.remove('open');
+  burger.classList.remove('open');
+}));
 
 // ===== FAQ ACCORDION =====
 function toggleFaq(btn) {
