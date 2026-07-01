@@ -128,7 +128,7 @@ if (form) {
       // Fallback mailto si l'API ne répond pas
       const subject = encodeURIComponent(`Demande de devis — ${data.societe}`);
       const body = encodeURIComponent(`Bonjour,\n\nNom : ${data.prenom}\nÉtablissement : ${data.societe}\nEmail : ${data.email}\nTéléphone : ${data.telephone}\nType : ${data.type}\n\nMessage :\n${data.message}`);
-      window.location.href = `mailto:stcommerce45@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:stcommerce46@gmail.com?subject=${subject}&body=${body}`;
       btn.textContent = 'Envoyer ma demande';
       btn.disabled = false;
     }
