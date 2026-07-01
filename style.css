@@ -539,6 +539,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
+.galerie__grid--2 .galerie__item {
+  aspect-ratio: 3/2;
+}
 .galerie__item {
   border-radius: 14px;
   overflow: hidden;
