@@ -16,12 +16,14 @@ window.addEventListener('scroll', () => {
 const burger = document.getElementById('burger');
 const navMobile = document.getElementById('navMobile');
 burger.addEventListener('click', () => {
-  navMobile.classList.toggle('open');
-  burger.classList.toggle('open');
+  const open = navMobile.classList.toggle('open');
+  burger.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', open);
 });
 navMobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   navMobile.classList.remove('open');
   burger.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
 }));
 
 // ===== FAQ ACCORDION =====
@@ -31,9 +33,14 @@ function toggleFaq(btn) {
   const isOpen = btn.classList.contains('open');
   document.querySelectorAll('.faq__q.open').forEach(q => {
     q.classList.remove('open');
+    q.setAttribute('aria-expanded', 'false');
     q.closest('.faq__item').querySelector('.faq__a').classList.remove('open');
   });
-  if (!isOpen) { btn.classList.add('open'); answer.classList.add('open'); }
+  if (!isOpen) {
+    btn.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+    answer.classList.add('open');
+  }
 }
 
 // ===== SMOOTH SCROLL =====
@@ -49,8 +56,11 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 
 // ===== COMPTEURS ANIMÉS =====
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 function animateCounter(el) {
   const target = parseInt(el.dataset.target);
+  if (reducedMotion) { el.textContent = target; return; }
   const duration = 1500;
   const start = performance.now();
   function update(now) {
@@ -81,12 +91,14 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.service-card, .point, .temoignage-card, .faq__item, .step-card, .visual-card, .contact__form-wrap').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-  observer.observe(el);
-});
+if (!reducedMotion) {
+  document.querySelectorAll('.service-card, .point, .temoignage-card, .faq__item, .step-card, .visual-card, .contact__form-wrap').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+}
 
 // ===== FORMULAIRE → HUBSPOT =====
 const form = document.getElementById('contactForm');
@@ -98,12 +110,13 @@ if (form) {
     btn.disabled = true;
 
     const data = {
-      prenom:    form.querySelector('#prenom').value,
-      societe:   form.querySelector('#societe').value,
-      email:     form.querySelector('#email').value,
-      telephone: form.querySelector('#telephone').value,
+      prenom:    form.querySelector('#prenom').value.trim(),
+      societe:   form.querySelector('#societe').value.trim(),
+      email:     form.querySelector('#email').value.trim(),
+      telephone: form.querySelector('#telephone').value.trim(),
       type:      form.querySelector('#type').value,
-      message:   form.querySelector('#message').value,
+      message:   form.querySelector('#message').value.trim(),
+      website:   form.querySelector('#website') ? form.querySelector('#website').value : '',
     };
 
     try {
@@ -113,7 +126,10 @@ if (form) {
         body: JSON.stringify(data),
       });
 
-      if (res.ok) {
+      // On exige une vraie réponse JSON de l'API : un rewrite qui renvoie
+      // du HTML avec un statut 200 ne doit pas passer pour un succès.
+      const isJson = (res.headers.get('content-type') || '').includes('application/json');
+      if (res.ok && isJson) {
         form.innerHTML = `
           <div style="text-align:center;padding:48px 0">
             <div style="font-size:52px;margin-bottom:16px;color:#1B3A2D">✓</div>
@@ -172,6 +188,15 @@ window.addEventListener('scroll', () => {
 // Fermer en cliquant sur l'overlay
 exitOverlay.addEventListener('click', (e) => {
   if (e.target === exitOverlay) closeExit();
+});
+
+// Fermer avec la touche Échap (popup + menu mobile)
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Escape') return;
+  closeExit();
+  navMobile.classList.remove('open');
+  burger.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
 });
 
 // ===== RGPD =====

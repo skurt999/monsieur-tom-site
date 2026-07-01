@@ -22,13 +22,14 @@
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:site_name" content="Monsieur Tom" />
   <meta property="og:image" content="https://monsieur-tom.fr/images/machine-2.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="900" />
+  <meta property="og:image:width" content="975" />
+  <meta property="og:image:height" content="1280" />
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Distributeur Automatique IDF — Monsieur Tom" />
   <meta name="twitter:description" content="Installation gratuite de distributeurs automatiques en Île-de-France. Boissons, snacks, café clé en main." />
+  <meta name="twitter:image" content="https://monsieur-tom.fr/images/machine-2.jpg" />
 
   <script type="application/ld+json">
   {
@@ -158,7 +159,7 @@
         <a href="#temoignages">Avis</a>
         <a href="#contact" class="btn btn--nav">Devis gratuit</a>
       </nav>
-      <button class="nav__burger" id="burger" aria-label="Menu">
+      <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="navMobile">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -229,7 +230,7 @@
           <h3>Vous nous contactez</h3>
           <p>Un appel, un WhatsApp ou le formulaire — on vous répond sous 24h pour comprendre votre besoin.</p>
         </div>
-        <div class="step-card__arrow">→</div>
+        <div class="step-card__arrow" aria-hidden="true">→</div>
         <div class="step-card">
           <div class="step-card__num">02</div>
           <div class="step-card__icon">
@@ -238,7 +239,7 @@
           <h3>On installe gratuitement</h3>
           <p>Livraison et installation de la machine à votre convenance — sans frais, sans travaux, sans paperasse.</p>
         </div>
-        <div class="step-card__arrow">→</div>
+        <div class="step-card__arrow" aria-hidden="true">→</div>
         <div class="step-card">
           <div class="step-card__num">03</div>
           <div class="step-card__icon">
@@ -415,17 +416,17 @@
         <h2 class="section__title">Nos machines<br />chez nos clients</h2>
       </div>
       <div class="galerie__grid">
-        <div class="galerie__item"><img src="images/install-1.jpg" alt="Distributeur automatique snacks et boissons Necta Soprano, installation Île-de-France" loading="lazy" /></div>
-        <div class="galerie__item"><img src="images/install-2.jpg" alt="Distributeur automatique Necta Samba en espace bureau, Île-de-France" loading="lazy" /></div>
-        <div class="galerie__item"><img src="images/install-3.jpg" alt="Distributeur automatique boissons et snacks installé chez un client IDF" loading="lazy" /></div>
-        <div class="galerie__item"><img src="images/install-5.jpg" alt="Distributeur automatique Necta Sfera, installation clé en main Île-de-France" loading="lazy" /></div>
-        <div class="galerie__item"><img src="images/install-6.jpg" alt="Distributeur automatique snacks et machine à café dans salle boisée, Monsieur Tom" loading="lazy" /></div>
-        <div class="galerie__item"><img src="images/install-7.jpg" alt="Distributeur snacks et machine café en salle d'attente, installation Monsieur Tom IDF" loading="lazy" /></div>
-        <div class="galerie__item"><img src="images/install-8.jpg" alt="Trois distributeurs automatiques côte à côte, installation multi-machines Île-de-France" loading="lazy" /></div>
-        <div class="galerie__item"><img src="images/install-9.jpg" alt="Machine à café Necta Opera Green, installation bureau Île-de-France" loading="lazy" /></div>
-        <div class="galerie__item"><img src="images/install-10.jpg" alt="Distributeur automatique repas frais Festival Necta, installation IDF" loading="lazy" /></div>
-        <div class="galerie__item"><img src="images/install-11.jpg" alt="Distributeurs automatiques café Lavazza, boissons et snacks, installation client IDF" loading="lazy" /></div>
-        <div class="galerie__item"><img src="images/install-12.jpg" alt="Machine à café Necta Opera et distributeur snacks en open space, Monsieur Tom" loading="lazy" /></div>
+        <div class="galerie__item"><img src="images/install-1.jpg" width="1070" height="1280" alt="Distributeur automatique snacks et boissons Necta Soprano, installation Île-de-France" loading="lazy" /></div>
+        <div class="galerie__item"><img src="images/install-2.jpg" width="1141" height="1280" alt="Distributeur automatique Necta Samba en espace bureau, Île-de-France" loading="lazy" /></div>
+        <div class="galerie__item"><img src="images/install-3.jpg" width="591" height="768" alt="Distributeur automatique boissons et snacks installé chez un client IDF" loading="lazy" /></div>
+        <div class="galerie__item"><img src="images/install-5.jpg" width="960" height="1280" alt="Distributeur automatique Necta Sfera, installation clé en main Île-de-France" loading="lazy" /></div>
+        <div class="galerie__item"><img src="images/install-6.jpg" width="975" height="1280" alt="Distributeur automatique snacks et machine à café dans salle boisée, Monsieur Tom" loading="lazy" /></div>
+        <div class="galerie__item"><img src="images/install-7.jpg" width="960" height="1280" alt="Distributeur snacks et machine café en salle d'attente, installation Monsieur Tom IDF" loading="lazy" /></div>
+        <div class="galerie__item"><img src="images/install-8.jpg" width="591" height="768" alt="Distributeurs automatiques café et boissons Necta côte à côte, installation Île-de-France" loading="lazy" /></div>
+        <div class="galerie__item"><img src="images/install-9.jpg" width="956" height="1280" alt="Machine à café Necta Opera Green, installation bureau Île-de-France" loading="lazy" /></div>
+        <div class="galerie__item"><img src="images/install-10.jpg" width="1034" height="1280" alt="Distributeur automatique repas frais Festival Necta, installation IDF" loading="lazy" /></div>
+        <div class="galerie__item"><img src="images/install-11.jpg" width="591" height="770" alt="Distributeurs automatiques café Lavazza, boissons et snacks, installation client IDF" loading="lazy" /></div>
+        <div class="galerie__item"><img src="images/install-12.jpg" width="807" height="1280" alt="Machine à café Necta Opera et distributeur snacks en open space, Monsieur Tom" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -439,31 +440,31 @@
       </div>
       <div class="faq__list">
         <div class="faq__item">
-          <button class="faq__q" onclick="toggleFaq(this)">L'installation est-elle vraiment gratuite ?<span class="faq__arrow">+</span></button>
+          <button class="faq__q" onclick="toggleFaq(this)" aria-expanded="false">L'installation est-elle vraiment gratuite ?<span class="faq__arrow">+</span></button>
           <div class="faq__a">Oui, totalement. Nous fournissons les machines, les livrons et les installons sans frais. Aucun investissement à prévoir de votre côté.</div>
         </div>
         <div class="faq__item">
-          <button class="faq__q" onclick="toggleFaq(this)">Comment fonctionne le réassort ?<span class="faq__arrow">+</span></button>
+          <button class="faq__q" onclick="toggleFaq(this)" aria-expanded="false">Comment fonctionne le réassort ?<span class="faq__arrow">+</span></button>
           <div class="faq__a">Nos équipes passent régulièrement selon la consommation de votre établissement. Les machines sont suivies à distance pour anticiper les ruptures.</div>
         </div>
         <div class="faq__item">
-          <button class="faq__q" onclick="toggleFaq(this)">Que se passe-t-il en cas de panne ?<span class="faq__arrow">+</span></button>
+          <button class="faq__q" onclick="toggleFaq(this)" aria-expanded="false">Que se passe-t-il en cas de panne ?<span class="faq__arrow">+</span></button>
           <div class="faq__a">Vous nous contactez par appel ou WhatsApp et nous intervenons sous 48h en Île-de-France. Les pannes sont rares mais nous les traitons en priorité.</div>
         </div>
         <div class="faq__item">
-          <button class="faq__q" onclick="toggleFaq(this)">Quels établissements équipez-vous ?<span class="faq__arrow">+</span></button>
+          <button class="faq__q" onclick="toggleFaq(this)" aria-expanded="false">Quels établissements équipez-vous ?<span class="faq__arrow">+</span></button>
           <div class="faq__a">Salles de sport, auto-écoles, cliniques, cabinets médicaux, coworkings, écoles, gymnases, centres de padel, centres de séminaire… Si vous avez du passage, nous avons une solution adaptée.</div>
         </div>
         <div class="faq__item">
-          <button class="faq__q" onclick="toggleFaq(this)">Peut-on choisir les produits ?<span class="faq__arrow">+</span></button>
+          <button class="faq__q" onclick="toggleFaq(this)" aria-expanded="false">Peut-on choisir les produits ?<span class="faq__arrow">+</span></button>
           <div class="faq__a">Oui. Nous adaptons la sélection à votre public et à vos préférences. Faites-nous part de vos souhaits au moment du contact.</div>
         </div>
         <div class="faq__item">
-          <button class="faq__q" onclick="toggleFaq(this)">Quelles zones d'Île-de-France couvrez-vous ?<span class="faq__arrow">+</span></button>
+          <button class="faq__q" onclick="toggleFaq(this)" aria-expanded="false">Quelles zones d'Île-de-France couvrez-vous ?<span class="faq__arrow">+</span></button>
           <div class="faq__a">Nous intervenons à Paris ainsi que dans toute la petite et grande couronne : Hauts-de-Seine, Seine-Saint-Denis, Val-de-Marne, Essonne, Yvelines, Val-d'Oise et Seine-et-Marne.</div>
         </div>
         <div class="faq__item">
-          <button class="faq__q" onclick="toggleFaq(this)">Le distributeur accepte-t-il le paiement sans contact ?<span class="faq__arrow">+</span></button>
+          <button class="faq__q" onclick="toggleFaq(this)" aria-expanded="false">Le distributeur accepte-t-il le paiement sans contact ?<span class="faq__arrow">+</span></button>
           <div class="faq__a">Oui, toutes nos machines acceptent la carte bancaire sans contact, Apple Pay, Google Pay ainsi que les espèces.</div>
         </div>
       </div>
@@ -493,12 +494,17 @@
             </a>
             <div class="contact__info-item">
               <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Île-de-France — Paris &amp; petite couronne</span>
+              <span>Île-de-France — Paris, petite &amp; grande couronne</span>
             </div>
           </div>
         </div>
         <div class="contact__form-wrap">
           <form class="contact__form" id="contactForm">
+            <!-- Honeypot anti-spam : invisible pour les humains, rempli par les bots -->
+            <div class="form__hp" aria-hidden="true">
+              <label for="website">Site web</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
             <div class="form__row">
               <div class="form__group">
                 <label for="prenom">Prénom *</label>
